@@ -206,8 +206,8 @@ public:
 int main()
 {
 	srand(time(0));
-	Animal_World* World = new Animal_World(Continent);
 	Continent* Continent = new Africa();
+	Animal_World* World = new Animal_World(Continent);
 	cout << "Africa\n" << endl;
 	World->Meals_Herbivores();
 	World->Nutrition_Carnivores();
