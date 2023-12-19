@@ -169,13 +169,14 @@ public:
 	}
 };
 
-class Animal_World {
-	Herbivore* herbivore[3];
-	Carnivore* carnivore[3];
+class Animal_World 
+{
+	Carnivore* carnivore[2];
+	Herbivore* herbivore[2];
 public:
 	Animal_World(Continent* continent)
 	{
-		for (size_t i = 0; i < 3; i++)
+		for (size_t i = 0; i < 2; i++)
 		{
 			herbivore[i] = continent->CreateHerbivoreAnimal();
 			carnivore[i] = continent->CreateCarnivoreAnimal();
@@ -183,7 +184,7 @@ public:
 	}
 	void Meals_Herbivores()
 	{
-		for (size_t i = 0; i < 3; i++)
+		for (size_t i = 0; i < 2; i++)
 		{
 			herbivore[i]->Eat_Grass();
 		}
@@ -191,9 +192,9 @@ public:
 
 	void Nutrition_Carnivores() 
 	{
-		for (size_t i = 0; i < 3; i++)
+		for (size_t i = 0; i < 2; i++)
 		{
-			for (size_t j = 0; j < 3; j++)
+			for (size_t j = 0; j < 2; j++)
 			{
 				carnivore[i]->Eat(herbivore[j]);
 			}
